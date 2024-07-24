@@ -30,5 +30,4 @@ class Assignment extends Model
     {
         return $this->hasMany(Soal::class);
     }
-
 }

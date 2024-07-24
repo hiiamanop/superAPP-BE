@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('khs', function (Blueprint $table) {
+        Schema::create('guru_mapels', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('siswa_id')->constrained('users');
+            $table->foreignId('guru_id')->constrained('users');
             $table->foreignId('mapel_id')->constrained('mata_pelajarans');
-            $table->foreignId('jenis_penilaian_id')->constrained();
-            $table->float('nilai');
-            $table->foreignId('tahun_ajaran_id')->constrained();
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('khs');
+        Schema::dropIfExists('guru_mapels');
     }
 };

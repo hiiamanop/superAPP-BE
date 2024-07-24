@@ -11,17 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('multiple_choices', function (Blueprint $table) {
+        Schema::create('tahun_ajarans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('soal_id')->constrained();
-            $table->text('answer');
-            $table->boolean('is_correct');
+            $table->string('tahun_ajaran');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('multiple_choices');
+        Schema::dropIfExists('tahun_ajarans');
     }
 };

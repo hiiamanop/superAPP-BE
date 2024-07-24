@@ -9,7 +9,17 @@ class Penilaian extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['assignment_id', 'max_score', 'jumlah_soal', 'essay_score', 'siswa_id', 'pilgan_score'];
+    protected $fillable = [
+        'assignment_id',
+        'max_score',
+        'jumlah_soal',
+        'essay_score',
+        'siswa_id',
+        'pilgan_score',
+        'multiple_choice_score',
+        'essay_score',
+        'total_score',
+    ];
 
     public function assignment()
     {

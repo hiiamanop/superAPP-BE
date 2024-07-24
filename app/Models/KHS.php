@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class KHS extends Model
 {
-    use HasFactory;
-
     protected $fillable = ['siswa_id', 'mapel_id', 'jenis_penilaian_id', 'nilai', 'tahun_ajaran_id'];
 
     public function siswa()

@@ -20,4 +20,9 @@ class Soal extends Model
     {
         return $this->hasMany(MultipleChoice::class);
     }
+
+    public function correctAnswer()
+    {
+        return $this->hasOne(MultipleChoice::class)->where('is_correct', true);
+    }
 }

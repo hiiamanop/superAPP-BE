@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mata_pelajarans', function (Blueprint $table) {
+        Schema::create('soals', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('name_mapel');
+            $table->foreignId('assignment_id')->constrained()->onDelete('cascade');
+            $table->text('question');
+            $table->enum('type', ['multiple_choice', 'essay']);
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('mata_pelajarans');
+        Schema::dropIfExists('soals');
     }
 };

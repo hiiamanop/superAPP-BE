@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('kategori_books', function (Blueprint $table) {
             $table->id();
-            $table->string('activity');
-            $table->date('date');
-            $table->foreignId('mapel_id')->nullable()->constrained('mata_pelajarans');
             $table->string('kategori');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('kategori_books');
     }
 };
